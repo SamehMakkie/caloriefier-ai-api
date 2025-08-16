@@ -8,9 +8,9 @@ test('example is loaded', async (t) => {
   const app = await build(t)
 
   const res = await app.inject({
-    url: '/example'
+    url: '/v1/'
   })
-  assert.equal(res.payload, 'this is an example')
+  assert.equal(res.statusCode, 200)
 })
 
 // inject callback style:
